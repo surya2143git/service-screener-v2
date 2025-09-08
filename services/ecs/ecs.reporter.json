@@ -1,0 +1,132 @@
+{
+    "ContainerInsights": {
+        "category": "O",
+        "^description": "You have {$COUNT} ECS clusters without Container Insights enabled. Container Insights provides detailed monitoring metrics and logs for containerized applications, helping with performance monitoring and troubleshooting.",
+        "shortDesc": "Enable Container Insights for monitoring",
+        "criticality": "M",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 1,
+        "needFullTest": 0,
+        "ref": [
+            "[Amazon ECS CloudWatch Container Insights]<https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html>"
+        ]
+    },
+    "CapacityProviders": {
+        "category": "R",
+        "^description": "You have {$COUNT} ECS clusters without capacity providers configured. Capacity providers help manage cluster auto scaling and optimize resource utilization across EC2 and Fargate.",
+        "shortDesc": "Configure capacity providers for better resource management",
+        "criticality": "M",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "needFullTest": 1,
+        "ref": [
+            "[Amazon ECS capacity providers]<https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-capacity-providers.html>"
+        ]
+    },
+    "ExecuteCommandLogging": {
+        "category": "S",
+        "^description": "You have {$COUNT} ECS clusters without execute command logging enabled. Logging ECS Exec sessions helps with security auditing and compliance requirements.",
+        "shortDesc": "Enable execute command logging for security auditing",
+        "criticality": "M",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 1,
+        "needFullTest": 0,
+        "ref": [
+            "[Logging and monitoring in Amazon ECS]<https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html#ecs-exec-logging>"
+        ]
+    },
+    "ExecuteCommandEncryption": {
+        "category": "S",
+        "^description": "You have {$COUNT} ECS clusters without KMS encryption for execute command sessions. Encrypting ECS Exec sessions protects sensitive data transmitted during debugging sessions.",
+        "shortDesc": "Enable KMS encryption for execute command sessions",
+        "criticality": "H",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 1,
+        "needFullTest": 0,
+        "ref": [
+            "[Using Amazon ECS Exec for debugging]<https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html>"
+        ]
+    },
+    "ClusterUtilization": {
+        "category": "C",
+        "^description": "You have {$COUNT} ECS clusters that appear to be empty or underutilized. Consider consolidating workloads or removing unused clusters to optimize costs.",
+        "shortDesc": "Review cluster utilization and consolidate if needed",
+        "criticality": "L",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "needFullTest": 1,
+        "ref": [
+            "[Amazon ECS cluster management]<https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html>"
+        ]
+    },
+    "ServiceLogging": {
+        "category": "O",
+        "^description": "You have {$COUNT} ECS services without proper logging configuration. Configuring logging helps with application monitoring, debugging, and compliance requirements.",
+        "shortDesc": "Configure logging for ECS services",
+        "criticality": "M",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 1,
+        "needFullTest": 0,
+        "ref": [
+            "[Using the awslogs log driver]<https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html>"
+        ]
+    },
+    "NetworkSecurity": {
+        "category": "S",
+        "^description": "You have {$COUNT} ECS services with network security issues such as missing security groups, public IP assignment, or improper subnet configuration. Review network settings to ensure proper security.",
+        "shortDesc": "Review and fix network security configuration",
+        "criticality": "H",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "needFullTest": 1,
+        "ref": [
+            "[Task networking with the awsvpc network mode]<https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html>"
+        ]
+    },
+    "AutoScaling": {
+        "category": "R",
+        "^description": "You have {$COUNT} ECS services without auto scaling configured. Auto scaling helps maintain application availability and optimize resource usage during varying load conditions.",
+        "shortDesc": "Configure auto scaling for ECS services",
+        "criticality": "M",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "needFullTest": 1,
+        "ref": [
+            "[Service auto scaling]<https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html>"
+        ]
+    },
+    "HealthChecks": {
+        "category": "R",
+        "^description": "You have {$COUNT} ECS services without proper health checks configured. Health checks ensure that only healthy tasks receive traffic and help maintain application availability.",
+        "shortDesc": "Configure health checks for ECS services",
+        "criticality": "M",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "needFullTest": 1,
+        "ref": [
+            "[Health check grace period]<https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service_definition_parameters.html#sd-healthCheckGracePeriodSeconds>"
+        ]
+    },
+    "TaskSecurity": {
+        "category": "S",
+        "^description": "You have {$COUNT} ECS tasks with security issues such as running as root user, privileged mode, or using host network mode. Review task definitions to follow security best practices.",
+        "shortDesc": "Review and fix task definition security settings",
+        "criticality": "H",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "needFullTest": 1,
+        "ref": [
+            "[Amazon ECS task definition security]<https://docs.aws.amazon.com/AmazonECS/latest/bestpracticesguide/security-tasks-containers.html>"
+        ]
+    }
+}

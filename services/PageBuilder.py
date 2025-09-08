@@ -14,6 +14,7 @@ class PageBuilder:
         'cloudwatch': 'clock',
         'dynamodb': 'bars',
         'ec2': 'server',
+        'ecs': 'cubes',
         'efs': 'network-wired', 
         'eks': 'box', 
         'elasticache': 'store',
