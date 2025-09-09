@@ -15,8 +15,8 @@
     },
     "Requirement 2 - Do not use vendor-supplied defaults": {
       "2.1 - Change vendor-supplied defaults": ["iam.passwordPolicy", "iam.noRootUserAccessKey"],
-      "2.2 - Develop configuration standards": ["ec2.instanceDetailedMonitoringEnabled"],
-      "2.3 - Encrypt all non-console administrative access": ["cloudtrail.logFileValidationEnabled"]
+      "2.2 - Develop configuration standards": ["ec2.instanceDetailedMonitoringEnabled", "ecs.ContainerInsights"],
+      "2.3 - Encrypt all non-console administrative access": ["cloudtrail.logFileValidationEnabled", "ecs.ExecuteCommandEncryption"]
     },
     "Requirement 3 - Protect stored cardholder data": {
       "3.1 - Keep cardholder data storage to minimum": ["s3.bucketLifecycleEnabled"],
@@ -28,16 +28,16 @@
       "4.2 - Never send unprotected PANs by end-user messaging": []
     },
     "Requirement 5 - Protect all systems against malware": {
-      "5.1 - Deploy anti-virus software": ["guardduty.isEnabled", "ecs.TaskSecurity"],
+      "5.1 - Deploy anti-virus software": ["guardduty.isEnabled"],
       "5.2 - Ensure anti-virus mechanisms are current": ["guardduty.isEnabled"]
     },
     "Requirement 6 - Develop and maintain secure systems": {
       "6.1 - Establish process to identify security vulnerabilities": ["securityhub.isEnabled", "guardduty.isEnabled"],
-      "6.2 - Ensure all system components are protected from known vulnerabilities": ["ec2.instanceDetailedMonitoringEnabled", "ecs.ContainerInsights"],
-      "6.3 - Develop internal and external software applications securely": []
+      "6.2 - Ensure all system components are protected from known vulnerabilities": ["ec2.instanceDetailedMonitoringEnabled", "ecs.TaskSecurity"],
+      "6.3 - Develop internal and external software applications securely": ["ecs.TaskSecurity"]
     },
     "Requirement 7 - Restrict access to cardholder data by business need-to-know": {
-      "7.1 - Limit access to system components and cardholder data": ["iam.noFullAdminPolicies", "iam.noInlinePolicy", "iam.noUserPolicies", "ecs.NetworkSecurity", "ecs.TaskSecurity"],
+      "7.1 - Limit access to system components and cardholder data": ["iam.noFullAdminPolicies", "iam.noInlinePolicy", "iam.noUserPolicies", "ecs.NetworkSecurity"],
       "7.2 - Establish access control system for systems components": ["iam.usersMfaEnabled", "iam.mfaEnabledForConsoleUsers"]
     },
     "Requirement 8 - Identify and authenticate access to system components": {
@@ -53,7 +53,7 @@
     "Requirement 10 - Track and monitor all access to network resources": {
       "10.1 - Implement audit trails to link all access to system components": ["cloudtrail.multiRegionTrailEnabled", "cloudtrail.cloudwatchLogsEnabled", "ecs.ExecuteCommandLogging", "ecs.ServiceLogging"],
       "10.2 - Implement automated audit trails for all system components": ["cloudtrail.logFileValidationEnabled"],
-      "10.3 - Record audit trail entries for all system components": ["cloudtrail.multiRegionTrailEnabled", "ecs.ExecuteCommandLogging", "ecs.ServiceLogging"]
+      "10.3 - Record audit trail entries for all system components": ["cloudtrail.multiRegionTrailEnabled"]
     },
     "Requirement 11 - Regularly test security systems and processes": {
       "11.1 - Implement processes to test for presence of wireless access points": [],
