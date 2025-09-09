@@ -157,7 +157,7 @@ for acctId, cred in rolesCred.items():
         frameworks = _cli_options['frameworks'].split(',')
     else:
         # Auto-include all available frameworks when none specified
-        available_frameworks = ['soc2', 'pcidss', 'hipaa', 'gdpr', 'cis', 'nist', 'wafs', 'ftr', 'msr', 'rbi', 'rmit', 'spip', 'ssb']
+        available_frameworks = ['soc2', 'pcidss', 'hipaa', 'gdpr', 'cis', 'nist', 'wafs', 'ftr', 'msr', 'rbi', 'spip', 'ssb']
         frameworks = available_frameworks
     
     tempConfig = _AWS_OPTIONS.copy();
