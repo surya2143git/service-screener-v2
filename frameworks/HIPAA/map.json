@@ -12,10 +12,10 @@
       "164.308(a)(1) - Security Officer": [],
       "164.308(a)(2) - Assigned Security Responsibilities": ["iam.supportRoleExists"],
       "164.308(a)(3) - Workforce Training and Access Management": ["iam.usersMfaEnabled", "iam.noFullAdminPolicies"],
-      "164.308(a)(4) - Information Access Management": ["iam.noInlinePolicy", "iam.noUserPolicies", "ecs.NetworkSecurity"],
+      "164.308(a)(4) - Information Access Management": ["iam.noInlinePolicy", "iam.noUserPolicies", "NetworkSecurity"],
       "164.308(a)(5) - Security Awareness and Training": [],
       "164.308(a)(6) - Security Incident Procedures": ["guardduty.isEnabled", "securityhub.isEnabled"],
-      "164.308(a)(7) - Contingency Plan": ["backup.resourcesProtectedByBackupPlan", "rds.instanceBackupEnabled", "ecs.AutoScaling", "ecs.HealthChecks"],
+      "164.308(a)(7) - Contingency Plan": ["backup.resourcesProtectedByBackupPlan", "rds.instanceBackupEnabled", "AutoScaling", "HealthChecks"],
       "164.308(a)(8) - Evaluation": ["cloudtrail.multiRegionTrailEnabled"]
     },
     "Physical Safeguards": {
@@ -25,14 +25,14 @@
       "164.310(c) - Device and Media Controls": []
     },
     "Technical Safeguards": {
-      "164.312(a)(1) - Access Control": ["iam.passwordPolicy", "iam.mfaEnabledForConsoleUsers", "iam.accessKeysRotated", "ecs.NetworkSecurity", "ecs.TaskSecurity"],
-      "164.312(a)(2) - Audit Controls": ["cloudtrail.multiRegionTrailEnabled", "cloudtrail.cloudwatchLogsEnabled", "cloudtrail.logFileValidationEnabled", "ecs.ExecuteCommandLogging", "ecs.ServiceLogging"],
+      "164.312(a)(1) - Access Control": ["iam.passwordPolicy", "iam.mfaEnabledForConsoleUsers", "iam.accessKeysRotated", "NetworkSecurity", "TaskSecurity"],
+      "164.312(a)(2) - Audit Controls": ["cloudtrail.multiRegionTrailEnabled", "cloudtrail.cloudwatchLogsEnabled", "cloudtrail.logFileValidationEnabled", "ExecuteCommandLogging", "ServiceLogging"],
       "164.312(b) - Integrity": ["s3.bucketVersioning", "cloudtrail.logFileValidationEnabled"],
       "164.312(c) - Person or Entity Authentication": ["iam.rootMfaActive", "iam.usersMfaEnabled"],
       "164.312(d) - Transmission Security": ["cloudfront.viewerPolicyHttps", "apigateway.endpointTypesPrivate"]
     },
     "Encryption Requirements": {
-      "164.312(a)(2)(iv) - Encryption and Decryption": ["s3.bucketEncryption", "rds.instanceEncryptionEnabled", "kms.cmkBackingKeyRotationEnabled", "ecs.ExecuteCommandEncryption"],
+      "164.312(a)(2)(iv) - Encryption and Decryption": ["s3.bucketEncryption", "rds.instanceEncryptionEnabled", "kms.cmkBackingKeyRotationEnabled", "ExecuteCommandEncryption"],
       "164.312(e)(1) - Transmission Security": ["cloudfront.viewerPolicyHttps"],
       "164.312(e)(2)(ii) - Encryption": ["s3.bucketEncryption", "rds.instanceEncryptionEnabled"]
     },
@@ -43,7 +43,7 @@
       "164.308(a)(4)(ii)(C) - Access Establishment and Modification": ["iam.accessKeysRotated"]
     },
     "Audit and Monitoring": {
-      "164.308(a)(1)(ii)(D) - Information System Activity Review": ["cloudtrail.cloudwatchLogsEnabled", "cloudwatch.hasAlarms", "ecs.ContainerInsights"],
+      "164.308(a)(1)(ii)(D) - Information System Activity Review": ["cloudtrail.cloudwatchLogsEnabled", "cloudwatch.hasAlarms", "ContainerInsights"],
       "164.312(b) - Audit Controls": ["cloudtrail.multiRegionTrailEnabled"],
       "164.308(a)(6)(ii) - Response and Reporting": ["guardduty.isEnabled"]
     },
