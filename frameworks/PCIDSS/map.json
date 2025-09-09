@@ -4,6 +4,7 @@
     "shortname": "PCI DSS",
     "fullname": "Payment Card Industry Data Security Standard",
     "description": "PCI DSS is a security standard for organizations that handle credit card information. It includes 12 requirements organized into 6 control objectives to ensure cardholder data protection.",
+    "_": "https://www.pcisecuritystandards.org/pci_security/",
     "emptyCheckDefaultMsg": "<small><i>Manual verification required. Please provide evidence of compliance with this PCI DSS requirement.</i></small>"
   },
   "mapping": {

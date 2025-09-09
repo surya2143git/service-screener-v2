@@ -4,6 +4,7 @@
     "shortname": "GDPR",
     "fullname": "General Data Protection Regulation",
     "description": "GDPR is a regulation in EU law on data protection and privacy for all individuals within the European Union and the European Economic Area. It addresses the export of personal data outside the EU and EEA areas.",
+    "_": "https://gdpr-info.eu/",
     "emptyCheckDefaultMsg": "<small><i>Manual verification required. Please provide evidence of compliance with this GDPR requirement.</i></small>"
   },
   "mapping": {

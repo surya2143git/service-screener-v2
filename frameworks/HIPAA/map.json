@@ -4,6 +4,7 @@
     "shortname": "HIPAA",
     "fullname": "Health Insurance Portability and Accountability Act",
     "description": "HIPAA Security Rule establishes national standards to protect individuals' electronic personal health information (ePHI). It requires appropriate administrative, physical, and technical safeguards.",
+    "_": "https://www.hhs.gov/hipaa/for-professionals/security/index.html",
     "emptyCheckDefaultMsg": "<small><i>Manual verification required. Please provide evidence of compliance with this HIPAA Security Rule requirement.</i></small>"
   },
   "mapping": {
