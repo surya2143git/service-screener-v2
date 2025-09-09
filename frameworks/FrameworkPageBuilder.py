@@ -50,8 +50,8 @@ class FrameworkPageBuilder(PageBuilder):
         
     @staticmethod
     def getServiceModuleDynamically(framework):
-        folder = framework
-        className = framework
+        folder = framework.upper()
+        className = framework.upper()
         module = 'frameworks.' + folder + '.' + className
         
         ServiceClass = getattr(importlib.import_module(module), className)

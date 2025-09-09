@@ -13,10 +13,10 @@
       "5.1(c) - Data minimisation": ["s3.bucketLifecycleEnabled"],
       "5.1(d) - Accuracy": [],
       "5.1(e) - Storage limitation": ["s3.bucketLifecycleEnabled"],
-      "5.1(f) - Integrity and confidentiality": ["s3.bucketEncryption", "rds.instanceEncryptionEnabled"]
+      "5.1(f) - Integrity and confidentiality": ["s3.bucketEncryption", "rds.instanceEncryptionEnabled", "ecs.ExecuteCommandEncryption", "ecs.TaskSecurity"]
     },
     "Article 25 - Data protection by design and by default": {
-      "25.1 - Data protection by design": ["s3.bucketEncryption", "s3.bucketPublicAccessBlock"],
+      "25.1 - Data protection by design": ["s3.bucketEncryption", "s3.bucketPublicAccessBlock", "ecs.NetworkSecurity", "ecs.TaskSecurity"],
       "25.2 - Data protection by default": ["s3.bucketPublicAccessBlock", "rds.instancePubliclyAccessible"]
     },
     "Article 30 - Records of processing activities": {
@@ -24,8 +24,8 @@
       "30.2 - Processor records": ["cloudtrail.logFileValidationEnabled"]
     },
     "Article 32 - Security of processing": {
-      "32.1(a) - Pseudonymisation and encryption": ["s3.bucketEncryption", "rds.instanceEncryptionEnabled", "kms.cmkBackingKeyRotationEnabled"],
-      "32.1(b) - Confidentiality, integrity, availability and resilience": ["rds.instanceMultiAZ", "backup.resourcesProtectedByBackupPlan"],
+      "32.1(a) - Pseudonymisation and encryption": ["s3.bucketEncryption", "rds.instanceEncryptionEnabled", "kms.cmkBackingKeyRotationEnabled", "ecs.ExecuteCommandEncryption"],
+      "32.1(b) - Confidentiality, integrity, availability and resilience": ["rds.instanceMultiAZ", "backup.resourcesProtectedByBackupPlan", "ecs.AutoScaling", "ecs.HealthChecks"],
       "32.1(c) - Restore availability and access": ["backup.resourcesProtectedByBackupPlan", "rds.instanceBackupEnabled"],
       "32.1(d) - Regular testing and evaluation": ["guardduty.isEnabled", "securityhub.isEnabled"]
     },
@@ -50,11 +50,11 @@
       "Article 21 - Right to object": []
     },
     "Technical and Organisational Measures": {
-      "Access Controls": ["iam.usersMfaEnabled", "iam.passwordPolicy", "iam.noFullAdminPolicies"],
+      "Access Controls": ["iam.usersMfaEnabled", "iam.passwordPolicy", "iam.noFullAdminPolicies", "ecs.NetworkSecurity", "ecs.TaskSecurity"],
       "Encryption in Transit": ["cloudfront.viewerPolicyHttps", "apigateway.endpointTypesPrivate"],
       "Encryption at Rest": ["s3.bucketEncryption", "rds.instanceEncryptionEnabled"],
-      "Audit Logging": ["cloudtrail.multiRegionTrailEnabled", "cloudtrail.logFileValidationEnabled"],
-      "Monitoring and Alerting": ["cloudwatch.hasAlarms", "guardduty.isEnabled"],
+      "Audit Logging": ["cloudtrail.multiRegionTrailEnabled", "cloudtrail.logFileValidationEnabled", "ecs.ExecuteCommandLogging", "ecs.ServiceLogging"],
+      "Monitoring and Alerting": ["cloudwatch.hasAlarms", "guardduty.isEnabled", "ecs.ContainerInsights"],
       "Key Management": ["kms.keyRotationEnabled", "kms.cmkBackingKeyRotationEnabled"]
     },
     "Data Subject Rights Implementation": {
