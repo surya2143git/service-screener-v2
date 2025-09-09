@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "originator": "GDPR",
+    "shortname": "GDPR",
+    "fullname": "General Data Protection Regulation",
+    "description": "GDPR is a regulation in EU law on data protection and privacy for all individuals within the European Union and the European Economic Area. It addresses the export of personal data outside the EU and EEA areas.",
+    "emptyCheckDefaultMsg": "<small><i>Manual verification required. Please provide evidence of compliance with this GDPR requirement.</i></small>"
+  },
+  "mapping": {
+    "Article 5 - Principles of processing personal data": {
+      "5.1(a) - Lawfulness, fairness and transparency": [],
+      "5.1(b) - Purpose limitation": ["s3.bucketTaggingEnabled"],
+      "5.1(c) - Data minimisation": ["s3.bucketLifecycleEnabled"],
+      "5.1(d) - Accuracy": [],
+      "5.1(e) - Storage limitation": ["s3.bucketLifecycleEnabled"],
+      "5.1(f) - Integrity and confidentiality": ["s3.bucketEncryption", "rds.instanceEncryptionEnabled"]
+    },
+    "Article 25 - Data protection by design and by default": {
+      "25.1 - Data protection by design": ["s3.bucketEncryption", "s3.bucketPublicAccessBlock"],
+      "25.2 - Data protection by default": ["s3.bucketPublicAccessBlock", "rds.instancePubliclyAccessible"]
+    },
+    "Article 30 - Records of processing activities": {
+      "30.1 - Controller records": ["cloudtrail.multiRegionTrailEnabled", "cloudtrail.cloudwatchLogsEnabled"],
+      "30.2 - Processor records": ["cloudtrail.logFileValidationEnabled"]
+    },
+    "Article 32 - Security of processing": {
+      "32.1(a) - Pseudonymisation and encryption": ["s3.bucketEncryption", "rds.instanceEncryptionEnabled", "kms.cmkBackingKeyRotationEnabled"],
+      "32.1(b) - Confidentiality, integrity, availability and resilience": ["rds.instanceMultiAZ", "backup.resourcesProtectedByBackupPlan"],
+      "32.1(c) - Restore availability and access": ["backup.resourcesProtectedByBackupPlan", "rds.instanceBackupEnabled"],
+      "32.1(d) - Regular testing and evaluation": ["guardduty.isEnabled", "securityhub.isEnabled"]
+    },
+    "Article 33 - Notification of personal data breach": {
+      "33.1 - Breach notification to supervisory authority": ["guardduty.isEnabled", "cloudwatch.hasAlarms"],
+      "33.2 - Breach notification requirements": ["cloudtrail.cloudwatchLogsEnabled"]
+    },
+    "Article 34 - Communication of personal data breach": {
+      "34.1 - Breach notification to data subject": [],
+      "34.3 - Public communication of breach": []
+    },
+    "Article 35 - Data protection impact assessment": {
+      "35.1 - DPIA requirement": [],
+      "35.7 - DPIA content requirements": []
+    },
+    "Chapter III - Rights of the data subject": {
+      "Article 15 - Right of access": [],
+      "Article 16 - Right to rectification": [],
+      "Article 17 - Right to erasure": ["s3.bucketLifecycleEnabled"],
+      "Article 18 - Right to restriction of processing": [],
+      "Article 20 - Right to data portability": [],
+      "Article 21 - Right to object": []
+    },
+    "Technical and Organisational Measures": {
+      "Access Controls": ["iam.usersMfaEnabled", "iam.passwordPolicy", "iam.noFullAdminPolicies"],
+      "Encryption in Transit": ["cloudfront.viewerPolicyHttps", "apigateway.endpointTypesPrivate"],
+      "Encryption at Rest": ["s3.bucketEncryption", "rds.instanceEncryptionEnabled"],
+      "Audit Logging": ["cloudtrail.multiRegionTrailEnabled", "cloudtrail.logFileValidationEnabled"],
+      "Monitoring and Alerting": ["cloudwatch.hasAlarms", "guardduty.isEnabled"],
+      "Key Management": ["kms.keyRotationEnabled", "kms.cmkBackingKeyRotationEnabled"]
+    },
+    "Data Subject Rights Implementation": {
+      "Right to be Forgotten": ["s3.bucketLifecycleEnabled"],
+      "Data Portability": [],
+      "Access Requests": [],
+      "Rectification": []
+    },
+    "Privacy by Design": {
+      "Default Privacy Settings": ["s3.bucketPublicAccessBlock"],
+      "Minimal Data Collection": ["s3.bucketTaggingEnabled"],
+      "Purpose Limitation": [],
+      "Transparency": []
+    }
+  }
+}

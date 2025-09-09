@@ -1,8 +1,8 @@
 from frameworks.FrameworkPageBuilder import FrameworkPageBuilder
 
 class SOC2PageBuilder(FrameworkPageBuilder):
-    def init(self):
-        super().__init__()
+    def __init__(self, framework, data):
+        super().__init__(framework, data)
         self.template = 'default'
         
     def _hookPostBuildContent(self):
